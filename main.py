@@ -25,3 +25,16 @@ else:
                 if not (row.get(column) or "").strip()
             )
             print(f"Blank values in '{column}': {blank_count}")
+
+        seen_rows = set()
+        duplicate_count = 0
+
+        for row in rows:
+            row_values = tuple(row.get(column, "") or "" for column in columns)
+
+            if row_values in seen_rows:
+                duplicate_count += 1
+            else:
+                seen_rows.add(row_values)
+
+        print(f"Duplicate rows found: {duplicate_count}")
