@@ -1,19 +1,18 @@
 # Smart Data Quality Analyzer
 
-A beginner Python project that reads a CSV file and reports its row count, column names, blank values, and duplicate rows.
+A beginner Python project that checks CSV files for basic data quality issues.
 
-## Requirements
+## What it checks
 
-- Python 3
+- Number of rows and columns
+- Whether the required `name` and `email` columns are present
+- Blank values in each column
+- Duplicate rows
 
 ## Run it
 
-Place a CSV file in the project folder, then run:
-
-```text
-python main.py
-When prompted, enter the CSV filename, such as `sample_data.csv`.
+Keep the CSV file in the project folder. In the VS Code terminal, run `python main.py`, then enter the CSV filename when prompted.
 
 ## Sample data
 
-The included `sample_data.csv` has four rows, including blank values in the `age` and `email` columns and one duplicate row.
+The included `sample_data.csv` has four rows, blank values in the `age` and `email` columns, and one duplicate row.

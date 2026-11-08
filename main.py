@@ -18,6 +18,17 @@ else:
         print(f"Rows found: {len(rows)}")
         print(f"Columns found: {len(columns)}")
         print(f"Column names: {columns}")
+        required_columns = ["name", "email"]
+        available_columns = {column.strip().lower() for column in columns if column}
+        missing_columns = [
+            column for column in required_columns
+            if column.lower() not in available_columns
+        ]
+
+        if missing_columns:
+            print(f"Missing required columns: {missing_columns}")
+        else:
+            print("All required columns are present.")
 
         for column in columns:
             blank_count = sum(
