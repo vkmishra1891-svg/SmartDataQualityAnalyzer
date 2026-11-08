@@ -5,7 +5,7 @@ A beginner Python project that checks CSV files for basic data quality issues.
 ## What it checks
 
 - Number of rows and columns
-- Whether the required `name` and `email` columns are present
+- Whether required columns are present (defaults to `name` and `email`; you can enter others)
 - Blank values in each column
 - Duplicate rows
 

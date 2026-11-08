@@ -18,7 +18,14 @@ else:
         print(f"Rows found: {len(rows)}")
         print(f"Columns found: {len(columns)}")
         print(f"Column names: {columns}")
-        required_columns = ["name", "email"]
+        required_input = input(
+            "Required columns, separated by commas (press Enter for name,email): "
+        ).strip()
+        required_columns = (
+            [column.strip() for column in required_input.split(",") if column.strip()]
+            if required_input
+            else ["name", "email"]
+        )
         available_columns = {column.strip().lower() for column in columns if column}
         missing_columns = [
             column for column in required_columns
